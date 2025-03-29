@@ -1,0 +1,97 @@
+[debug] [2025-03-29T10:05:05.799Z] ----------------------------------------------------------------------
+[debug] [2025-03-29T10:05:05.805Z] Command:       /Users/arpitnamdeo/.nvm/versions/node/v22.14.0/bin/node /Users/arpitnamdeo/.nvm/versions/node/v22.14.0/bin/firebase init
+[debug] [2025-03-29T10:05:05.805Z] CLI Version:   14.0.1
+[debug] [2025-03-29T10:05:05.805Z] Platform:      darwin
+[debug] [2025-03-29T10:05:05.806Z] Node Version:  v22.14.0
+[debug] [2025-03-29T10:05:05.806Z] Time:          Sat Mar 29 2025 15:35:05 GMT+0530 (India Standard Time)
+[debug] [2025-03-29T10:05:05.806Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-03-29T10:05:05.812Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-03-29T10:05:05.812Z] > authorizing via signed-in user (namdevarpit72@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /Users/arpitnamdeo/eclipse-workspace/SBT-Registratoin-App.zip_expanded/SBT-Registratoin-App
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2025-03-29T10:05:37.459Z] Checked if tokens are valid: true, expires at: 1743246214467
+[debug] [2025-03-29T10:05:37.460Z] Checked if tokens are valid: true, expires at: 1743246214467
+[debug] [2025-03-29T10:05:37.462Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2025-03-29T10:05:38.602Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2025-03-29T10:05:38.602Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project travelbuddies-73bac (TravelBuddies) 
+[info] 
+=== Dataconnect Setup
+[debug] [2025-03-29T10:05:59.969Z] Checked if tokens are valid: true, expires at: 1743246214467
+[debug] [2025-03-29T10:05:59.969Z] Checked if tokens are valid: true, expires at: 1743246214467
+[debug] [2025-03-29T10:05:59.970Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/travelbuddies-73bac/billingInfo [none]
+[debug] [2025-03-29T10:06:01.688Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/travelbuddies-73bac/billingInfo 200
+[debug] [2025-03-29T10:06:01.688Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/travelbuddies-73bac/billingInfo {"name":"projects/travelbuddies-73bac/billingInfo","projectId":"travelbuddies-73bac","billingAccountName":"","billingEnabled":false}
+[info] i  dataconnect: ensuring required API sqladmin.googleapis.com is enabled... 
+[debug] [2025-03-29T10:06:01.690Z] Checked if tokens are valid: true, expires at: 1743246214467
+[debug] [2025-03-29T10:06:01.690Z] Checked if tokens are valid: true, expires at: 1743246214467
+[debug] [2025-03-29T10:06:01.690Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/travelbuddies-73bac/services/sqladmin.googleapis.com [none]
+[debug] [2025-03-29T10:06:01.690Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/travelbuddies-73bac/services/sqladmin.googleapis.com x-goog-quota-user=projects/travelbuddies-73bac
+[debug] [2025-03-29T10:06:03.716Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/travelbuddies-73bac/services/sqladmin.googleapis.com 200
+[debug] [2025-03-29T10:06:03.716Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/travelbuddies-73bac/services/sqladmin.googleapis.com [omitted]
+[warn] ⚠  dataconnect: missing required API sqladmin.googleapis.com. Enabling now... 
+[debug] [2025-03-29T10:06:03.717Z] Checked if tokens are valid: true, expires at: 1743246214467
+[debug] [2025-03-29T10:06:03.717Z] Checked if tokens are valid: true, expires at: 1743246214467
+[debug] [2025-03-29T10:06:03.717Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/travelbuddies-73bac/services/sqladmin.googleapis.com:enable [none]
+[debug] [2025-03-29T10:06:03.718Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/travelbuddies-73bac/services/sqladmin.googleapis.com:enable x-goog-quota-user=projects/travelbuddies-73bac
+[debug] [2025-03-29T10:06:05.673Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/travelbuddies-73bac/services/sqladmin.googleapis.com:enable 200
+[debug] [2025-03-29T10:06:05.674Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/travelbuddies-73bac/services/sqladmin.googleapis.com:enable [omitted]
+[debug] [2025-03-29T10:06:15.676Z] Checked if tokens are valid: true, expires at: 1743246214467
+[debug] [2025-03-29T10:06:15.677Z] Checked if tokens are valid: true, expires at: 1743246214467
+[debug] [2025-03-29T10:06:15.678Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/travelbuddies-73bac/services/sqladmin.googleapis.com [none]
+[debug] [2025-03-29T10:06:15.678Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/travelbuddies-73bac/services/sqladmin.googleapis.com x-goog-quota-user=projects/travelbuddies-73bac
+[debug] [2025-03-29T10:06:17.657Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/travelbuddies-73bac/services/sqladmin.googleapis.com 200
+[debug] [2025-03-29T10:06:17.657Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/travelbuddies-73bac/services/sqladmin.googleapis.com [omitted]
+[info] ✔  dataconnect: required API sqladmin.googleapis.com is enabled 
+[info] ✔  Wrote dataconnect/dataconnect.yaml 
+[info] ✔  Wrote dataconnect/schema/schema.gql 
+[info] ✔  Wrote dataconnect/connector/connector.yaml 
+[info] ✔  Wrote dataconnect/connector/queries.gql 
+[info] ✔  Wrote dataconnect/connector/mutations.gql 
+[info] i  If you'd like to add the generated SDK to your app later, run firebase init dataconnect:sdk 
+[info] i  If you'd like to provision a CloudSQL Postgres instance on the Firebase Data Connect no-cost trial:
+1. Please upgrade to the pay-as-you-go (Blaze) billing plan. Visit the following page:
+     https://console.firebase.google.com/project/travelbuddies-73bac/usage/details
+2. Run firebase init dataconnect again to configure the Cloud SQL instance.
+3. Run firebase deploy --only dataconnect to deploy your Data Connect service. 
+[info] 
+=== Firestore Setup
+[debug] [2025-03-29T10:06:17.666Z] Checked if tokens are valid: true, expires at: 1743246214467
+[debug] [2025-03-29T10:06:17.666Z] Checked if tokens are valid: true, expires at: 1743246214467
+[debug] [2025-03-29T10:06:17.666Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/travelbuddies-73bac/services/firestore.googleapis.com [none]
+[debug] [2025-03-29T10:06:17.666Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/travelbuddies-73bac/services/firestore.googleapis.com x-goog-quota-user=projects/travelbuddies-73bac
+[debug] [2025-03-29T10:06:19.450Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/travelbuddies-73bac/services/firestore.googleapis.com 200
+[debug] [2025-03-29T10:06:19.450Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/travelbuddies-73bac/services/firestore.googleapis.com [omitted]
+[debug] [2025-03-29T10:06:19.451Z] Checked if tokens are valid: true, expires at: 1743246214467
+[debug] [2025-03-29T10:06:19.451Z] Checked if tokens are valid: true, expires at: 1743246214467
+[debug] [2025-03-29T10:06:19.452Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/travelbuddies-73bac/databases/(default) [none]
+[debug] [2025-03-29T10:06:19.815Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/travelbuddies-73bac/databases/(default) 404
+[debug] [2025-03-29T10:06:19.815Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/travelbuddies-73bac/databases/(default) {"error":{"code":404,"message":"Project 'travelbuddies-73bac' or database '(default)' does not exist.","status":"NOT_FOUND"}}
+[debug] [2025-03-29T10:06:19.816Z] error getting database type:  Request to https://firestore.googleapis.com/v1/projects/travelbuddies-73bac/databases/(default) had HTTP Error: 404, Project 'travelbuddies-73bac' or database '(default)' does not exist. {"name":"FirebaseError","children":[],"context":{"body":{"error":{"code":404,"message":"Project 'travelbuddies-73bac' or database '(default)' does not exist.","status":"NOT_FOUND"}},"response":{"statusCode":404}},"exit":1,"message":"Request to https://firestore.googleapis.com/v1/projects/travelbuddies-73bac/databases/(default) had HTTP Error: 404, Project 'travelbuddies-73bac' or database '(default)' does not exist.","status":404}
+[info] (default) does not exist in project travelbuddies-73bac.
+[debug] [2025-03-29T10:06:19.819Z] database_type: DATABASE_DOES_NOT_EXIST
+[debug] [2025-03-29T10:08:56.279Z] Checked if tokens are valid: true, expires at: 1743246214467
+[debug] [2025-03-29T10:08:56.280Z] Checked if tokens are valid: true, expires at: 1743246214467
+[debug] [2025-03-29T10:08:56.281Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/travelbuddies-73bac/databases/travelbuddies [none]
+[debug] [2025-03-29T10:08:56.624Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/travelbuddies-73bac/databases/travelbuddies 404
+[debug] [2025-03-29T10:08:56.624Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/travelbuddies-73bac/databases/travelbuddies {"error":{"code":404,"message":"Project 'travelbuddies-73bac' or database 'travelbuddies' does not exist.","status":"NOT_FOUND"}}
+[debug] [2025-03-29T10:08:56.625Z] error getting database type:  Request to https://firestore.googleapis.com/v1/projects/travelbuddies-73bac/databases/travelbuddies had HTTP Error: 404, Project 'travelbuddies-73bac' or database 'travelbuddies' does not exist. {"name":"FirebaseError","children":[],"context":{"body":{"error":{"code":404,"message":"Project 'travelbuddies-73bac' or database 'travelbuddies' does not exist.","status":"NOT_FOUND"}},"response":{"statusCode":404}},"exit":1,"message":"Request to https://firestore.googleapis.com/v1/projects/travelbuddies-73bac/databases/travelbuddies had HTTP Error: 404, Project 'travelbuddies-73bac' or database 'travelbuddies' does not exist.","status":404}
+[info] travelbuddies does not exist in project travelbuddies-73bac.
+[debug] [2025-03-29T10:08:56.625Z] database_type: DATABASE_DOES_NOT_EXIST
