@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Global Trips</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<!-- Nav Bar Start -->
+	<header>
+		<div>
+			<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <!-- Brand -->
+    <a class="navbar-brand" href="#">Travel Buddies</a>
+
+    <!-- Navbar toggler for mobile responsiveness -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+   <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" th:href="@{/trips/home}">HOME</a></li>
+            <li class="nav-item"><a class="nav-link" th:href="@{/trips/new}">REGISTER A TRIP</a></li>
+            <li class="nav-item"><a class="nav-link" th:href="@{/selectTrip}">SELECT A TRIP</a></li>
+            <li class="nav-item"><a class="nav-link" th:href="@{/trips}">ALL TRIPS</a></li>
+            <li class="nav-item"><a class="nav-link" th:href="@{/user/profile}">PROFILE</a></li>
+        </ul>
+        <!-- Logout Link Styled Correctly -->
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link text-light" th:href="@{/logout}">LOGOUT</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+	<!-- Nav Bar End -->
+
+<!-- Filters Section -->
+<div class="container mt-4">
+    <h2 class="text-center">Search Trips</h2>
+    
+    <form method="get" th:action="@{/searchTrips}" class="mb-4">
+        <div class="form-group">
+            <label>Source State</label>
+            <input type="text" name="sourceState" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label>Destination State</label>
+            <input type="text" name="destinationState" class="form-control" required>
+        </div>
+        
+        <!-- Optional Fields for More Specific Searches -->
+        <div id="cityFields">
+            <div class="form-group">
+                <label>Source City</label>
+                <input type="text" name="sourceCity" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Destination City</label>
+                <input type="text" name="destinationCity" class="form-control">
+            </div>
+        </div>
+
+        <div id="pincodeFields" style="display: none;">
+            <div class="form-group">
+                <label>Source Pincode</label>
+                <input type="text" name="sourcePincode" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Destination Pincode</label>
+                <input type="text" name="destinationPincode" class="form-control">
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Search</button>
+    </form>
+    
+    <!-- Results Table -->
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Source State</th>
+                <th>Source City</th>
+                <th>Source Pincode</th>
+                <th>Destination State</th>
+                <th>Destination City</th>
+                <th>Destination Pincode</th>
+                <th>Available Seats</th>
+                <th>Departure Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="trip : ${trips}">
+                <td th:text="${trip.sourceState}"></td>
+                <td th:text="${trip.sourceCity}"></td>
+                <td th:text="${trip.sourcePincode}"></td>
+                <td th:text="${trip.destinationState}"></td>
+                <td th:text="${trip.destinationCity}"></td>
+                <td th:text="${trip.destinationPincode}"></td>
+                <td th:text="${trip.availableSeats}"></td>
+                <td th:text="${trip.departureTime}"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<script>
+    // Show/Hide additional filters based on user input
+    $('input[name="sourceCity"], input[name="destinationCity"]').on('input', function () {
+        $('#pincodeFields').show();
+    });
+</script>
+
+</body>
+</html>

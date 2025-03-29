@@ -41,7 +41,7 @@ public class MyConfig extends WebSecurityConfigurerAdapter{
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests().antMatchers("/user/**").hasRole("USER").antMatchers("/**").permitAll()
-		.and().formLogin().loginPage("/login").loginProcessingUrl("/doLogin").defaultSuccessUrl("/user/home").and().csrf().disable();
+		.and().formLogin().loginPage("/login").loginProcessingUrl("/doLogin").defaultSuccessUrl("/trips/home").and().csrf().disable();
 		}
 
 }

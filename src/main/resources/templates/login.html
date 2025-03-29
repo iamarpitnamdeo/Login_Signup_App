@@ -12,11 +12,11 @@
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
 
-<title>Hello, world!</title>
+<title>Login Page</title>
 </head>
 <body style="background-color: #f0f1f2;">
 	<!-- Nav Bar Start -->
-	<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+	<!-- <nav class="navbar navbar-expand-lg navbar-light bg-primary">
 		<a class="navbar-brand" href="#">Registration Form</a>
 
 
@@ -41,7 +41,7 @@
 				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Register</button>
 			</form>
 		</div>
-	</nav>
+	</nav> -->
 	<!-- Nav Bar End -->
 	<!-- Form Body Start -->
 	<div class="container p-2">
@@ -50,12 +50,13 @@
 				<div class="card">
 					<div class="card-body">
 						<h3 class="text-center">Login Form</h3>
-						
+
 						<div th:if="${param.logout}">
 							<h5 class="text-center text-success">Logout Successfully</h5>
 						</div>
 						<div th:if="${param.error}">
-							<h5 class="text-center text-success">Invalid UserName and Password</h5>
+							<h5 class="text-center text-success">Invalid UserName and
+								Password</h5>
 						</div>
 
 						<form th:action="@{/doLogin}" method="post">
@@ -76,6 +77,15 @@
 							</div>
 
 							<button type="submit" class="btn btn-primary">Submit</button>
+							<div>
+								<a href="/">Don't have an account? Sign up here.</a>
+							</div>
+
+							<!-- Display error message if login fails -->
+							<div th:if="${error}">
+								<p style="color: red;">Invalid email or password. Please try
+									again.</p>
+							</div>
 						</form>
 					</div>
 				</div>

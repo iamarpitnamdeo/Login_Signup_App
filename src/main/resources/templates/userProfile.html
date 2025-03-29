@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>User Profile</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+</head>
+<!-- Nav Bar Start -->
+<header>
+	<div>
+		<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+			<!-- Brand -->
+			<a class="navbar-brand" href="#">Travel Buddies</a>
+
+			<!-- Navbar toggler for mobile responsiveness -->
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#collapsibleNavbar">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="collapsibleNavbar">
+				<ul class="navbar-nav">
+					<li class="nav-item"><a class="nav-link"
+						th:href="@{/trips/home}">HOME</a></li>
+					<li class="nav-item"><a class="nav-link"
+						th:href="@{/trips/new}">REGISTER A TRIP</a></li>
+					<li class="nav-item"><a class="nav-link"
+						th:href="@{/selectTrip}">SELECT A TRIP</a></li>
+					<li class="nav-item"><a class="nav-link" th:href="@{/trips}">ALL
+							TRIPS</a></li>
+					<li class="nav-item"><a class="nav-link"
+						th:href="@{/user/profile}">PROFILE</a></li>
+				</ul>
+				<!-- Logout Link Styled Correctly -->
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item"><a class="nav-link text-light"
+						th:href="@{/logout}">LOGOUT</a></li>
+				</ul>
+			</div>
+		</nav>
+
+	</div>
+</header>
+<!-- Nav Bar End -->
+<body>
+	<div class="container p-2">
+		<div class="row">
+			<div class="col-md-6 offset-md-3">
+				<div class="card">
+					<div class="card-body">
+						<h1>Your Details</h1>
+						<h5>Name=[[${fullName}]]</h5>
+						<h5>Address=[[${address}]]</h5>
+						<h5>Email=[[${email}]]</h5>
+						<h5>Role=[[${role}]]</h5>
+						<h5>DOB=[[${dob}]]</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<tr>
+			<div align="left">
+				<h3>
+					<a th:href="@{/trips/new}">New Trip</a>
+			</div>
+
+		</tr>
+		<table class="table table-striped table-bordered">
+			<thead class="table-dark">
+				<tr>
+					<th>Source State</th>
+					<th>Source City</th>
+					<th>Source Pincode</th>
+					<th>Available Seats</th>
+					<th>Departure Time</th>
+					<th>Destination State</th>
+					<th>Destination City</th>
+					<th>Destination Pincode</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="trip: ${allTrips}">
+					<td th:text="${trip.sourceState}"></td>
+					<td th:text="${trip.sourceCity}"></td>
+					<td th:text="${trip.sourcePincode}"></td>
+					<td th:text="${trip.availableSeats}"></td>
+					<td th:text="${trip.departureTime}"></td>
+					<td th:text="${trip.destinationState}"></td>
+					<td th:text="${trip.destinationCity}"></td>
+					<td th:text="${trip.destinationPincode}"></td>
+					<td><a th:href="@{/trips/edit/{tripId}(tripId=${trip.id})}"
+						class="btn btn-primary">Update</a> <a
+						th:href="@{/trips/delete/{tripId}(tripId=${trip.id})}"
+						class="btn btn-danger">Delete</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</body>
+</html>

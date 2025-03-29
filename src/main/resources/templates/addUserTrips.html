@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Travel Buddies</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+	<!-- Nav Bar Start -->
+	<header>
+		<div>
+			<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <!-- Brand -->
+    <a class="navbar-brand" href="#">Travel Buddies</a>
+
+    <!-- Navbar toggler for mobile responsiveness -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" th:href="@{/trips/home}">HOME</a></li>
+            <li class="nav-item"><a class="nav-link" th:href="@{/trips/new}">REGISTER A TRIP</a></li>
+            <li class="nav-item"><a class="nav-link" th:href="@{/selectTrip}">SELECT A TRIP</a></li>
+            <li class="nav-item"><a class="nav-link" th:href="@{/trips}">ALL TRIPS</a></li>
+            <li class="nav-item"><a class="nav-link" th:href="@{/user/profile}">PROFILE</a></li>
+        </ul>
+        <!-- Logout Link Styled Correctly -->
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link text-light" th:href="@{/logout}">LOGOUT</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+		</div>
+	</header>
+	<!-- Nav Bar End -->
+
+
+	<div align="center">
+		<h1>Register Your Trip</h1>
+		<br />
+		<div class="col-sm-4">
+			<form action="#" th:action="@{/trips}" th:object="${trip}"
+				method="post">
+
+
+				<div align="left">
+					<tr>
+						<label class="form-label">User Id</label>
+						<td><input type="text" id="user-id"
+							th:value="${user.id}"placeholder="User Id" readonly required>
+						</td>
+					</tr>
+				</div>
+				<div align="left">
+					<tr>
+						<label class="form-label">Source State</label>
+						<td><input type="text" id="source-state"
+							th:field="*{sourceState}" placeholder="Enter source state"
+							required></td>
+					</tr>
+				</div>
+				<div align="left">
+					<tr>
+						<label class="form-label">Source City</label>
+						<td><input type="text" id="destination-city"
+							th:field="*{sourceCity}"
+							placeholder="Enter destination city" required
+							class="w-full p-2 border border-gray-300 rounded-md"></td>
+					</tr>
+				</div>
+				<div align="left">
+					<tr>
+						<label class="form-label">Source Pincode</label>
+						<td><input type="text" id="source-pincode"
+							th:field="*{sourcePincode}" placeholder="Enter source pincode"
+							required class="w-full p-2 border border-gray-300 rounded-md">
+						</td>
+					</tr>
+				</div>
+
+				<div align="left">
+					<tr>
+						<label class="form-label">Destination State</label>
+						<td><input type="text" id="destination-state"
+							th:field="*{destinationState}"
+							placeholder="Enter destination state" required
+							class="w-full p-2 border border-gray-300 rounded-md"></td>
+					</tr>
+				</div>
+				<div align="left">
+					<tr>
+						<label class="form-label">Destination City </label>
+						<td><input type="text" id="source-pincode"
+							th:field="*{destinationCity}" placeholder="Enter source pincode"
+							required class="w-full p-2 border border-gray-300 rounded-md">
+						</td>
+					</tr>
+				</div>
+				<div align="left">
+					<tr>
+						<label class="form-label">Destination Pincode</label>
+						<td><input type="text" id="destination-pincode"
+							th:field="*{destinationPincode}"
+							placeholder="Enter destination pincode" required
+							class="w-full p-2 border border-gray-300 rounded-md"></td>
+					</tr>
+				</div>
+
+				<div align="left">
+					<tr>
+						<label class="form-label">Departure Time</label>
+						<td><input type="datetime-local" th:field="*{departureTime}"
+							id="departure-time" required
+							class="w-full p-2 border border-gray-300 rounded-md"></td>
+					</tr>
+				</div>
+				<div align="left">
+					<tr>
+						<label class="form-label">Available Seats</label>
+						<td><input type="number" id="available-seats"
+							th:field="*{availableSeats}" placeholder="Enter available seats"
+							required min="1"
+							class="w-full p-2 border border-gray-300 rounded-md"></td>
+					</tr>
+				</div>
+
+				<!-- <div align="left">
+            <tr>
+                <label class="form-label" >Course</label>
+                
+                <td>
+                 <select name="course" id="course" class="form-control">
+                 	<option th:each="course : ${listcourse}"
+                 			th:value="${course.id}"
+                 			th:text="${course.coursename}">
+                 	</option>		
+                 
+                 </select>
+                </td>
+            </tr>
+         </div>   -->
+
+				<!--         <div align="left">
+         <tr>
+         	<label class="form-Label">Fee</label>
+         	<td>
+         		<input type="text" th:field="*{fee}" class="form-control" placeholder="Fee"/>
+         	</td>
+         </tr>
+		 </div> -->
+				<br>
+				<tr>
+					<td colspan="2"><button type="submit">Save</button></td>
+				</tr>
+
+			</form>
+		</div>
+</body>
+</html>
